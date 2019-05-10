@@ -21,20 +21,20 @@
 		</div>
 		<div class="blogsbox" :style="'height:'+divHeight +'px'">
 			<ul>
-				<li v-for="(o, index) in 10" :key="o">
+				<li v-for="data in tableData">
 					<div>
-						<span>Vue.js系列：生命周期钩子</span>
+						<span>{{data.title}}</span>
 						<span>Hot</span>
 					</div>
 					<div class="abstract">
-						<span>目前Go的IDE有两款比较流行，一款是国人开发的LiteIDE（免费），另一款是Jetbrains公司的Goland（收费），我们推荐使用Goland来作为开发IDE，下载及注册请参考网上教程（百度 或 Google）。</span>
+						<span>{{data.abstract}}</span>
 					</div>
 					<div class="info">
-						<div><i class="el-icon-user"></i>作者</div>
-						<div><i class="el-icon-pie-chart"></i>分类</div>
-						<div><i class="el-icon-alarm-clock"></i>时间</div>
-						<div><i class="el-icon-thumb"></i>浏览</div>
-						<div><i class="el-icon-chat-round"></i>评论</div>
+						<div><i class="el-icon-user"></i>{{data.nickname}}</div>
+						<div><i class="el-icon-pie-chart"></i>{{data.name}}</div>
+						<div><i class="el-icon-alarm-clock"></i>{{data.update_time}}</div>
+						<div><i class="el-icon-thumb"></i>{{data.views}}</div>
+						<div><i class="el-icon-chat-round"></i>{{data.likes}}</div>
 					</div>
 				</li>
 			</ul>
@@ -54,13 +54,25 @@
 		},
 		data() {
 			return {
-				data: [],
+				tableData: [],
 				divHeight: 0,
 			};
 		},
 		mounted() {
+		    this.axios({
+		    	url: 'http://127.0.0.1:8010/api/v1/articles',
+		    	method: 'get',
+		    	// params: {
+		    		// page: this.cur_page
+		    	// }
+		    }).then((res) => {
+		    	this.tableData = res.data.data[0];
+		    	console.log(this.tableData)
+		    	// this.$message.success(res.data.msg);
+		    }),
 			this.divHeight = document.documentElement.clientHeight - 261
 		}
+	
 	}
 </script>
 
