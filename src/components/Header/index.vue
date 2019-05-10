@@ -1,46 +1,46 @@
 <template>
-	<div id="coco-index">
-		<div class="header">
-			
-			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-				<el-menu-item index="1"><span>卖小孩的火柴</span></el-menu-item>
-				<el-menu-item index="2">文章</el-menu-item>
-				<el-menu-item index="3">教程</el-menu-item>
-				<el-menu-item index="4">社区</el-menu-item>
-			</el-menu>
-		</div>
-	</div>
+	<header id="header">
+		<h1>{{title}}</h1>
+	</header>
 </template>
 
 <script>
 	export default {
-		name: "Header"
+		name: "Header",
+		props: {
+			title: {
+				type: String,
+				default: '卖小孩的火柴'
+			}
+		},
+		data() {
+			return {
+
+			}
+		}
 	};
 </script>
 
 <style scoped>
-	#coco-index {
+	#header{
 		width: 100%;
-		margin: 0 auto;
-		border-bottom: 1px solid #42B983;
-	}
-
-	.header {
-		width: 1000px;
-		margin: 0 auto;
 		height: 80px;
+		color: #fff;
+		background:#55cbc4;
+		border-bottom: 1px solid #55cbc4;
+		position: relative;
 	}
-
-	.header .el-menu.el-menu--horizontal {
-		border: none;
+	#header h1{
+		font-size: 18px;
+		text-align: center;
+		line-height: 80px;
+		font-weight: normal;
 	}
-
-	.el-menu-item {
-		font-size: 16px;
-		color: #474747;
-	}
-	.el-menu-item span{
-		font-size: 16px;
-		color: #474747;
+	#header i{
+		position: absolute;
+		left: 5px;
+		top: 50%;
+		margin-top: -13px;
+		font-size: 26px;
 	}
 </style>

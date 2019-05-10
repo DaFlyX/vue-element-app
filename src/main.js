@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui'
+// import ElementUI from 'element-ui'
 import App from './App.vue'
 import router from './routers'
 import store from './stores'
@@ -7,11 +7,11 @@ import './registerServiceWorker'
 import './plugins/element.js'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI);
+// Vue.use(ElementUI);
 
 new Vue({
   router,
   store,
-  el :'#app',
+  // el :'#app',
   render: h => h(App)
-});
+}).$mount('#app')

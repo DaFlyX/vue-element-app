@@ -4,15 +4,21 @@ import homeRouter from './home'
 import articleRouter from './article'
 import communityRouter from './community'
 import tutorialRouter from './tutorial'
+import mineRouter from './mine'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
+	mode: 'history',
+	base: process.env.BASE_URL,
+	routes: [
 		homeRouter,
-    articleRouter,
+		articleRouter,
 		communityRouter,
-		tutorialRouter
-  ]
+		tutorialRouter,
+		mineRouter,
+		{
+			path: '/*',
+			redirect: '/home'
+		}
+	]
 })

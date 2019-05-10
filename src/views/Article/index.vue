@@ -1,21 +1,61 @@
 <template>
-    <div>
-       <Header></Header>
-       
-    </div>
+	<div id="main">
+		<Header title="文章"></Header>
+		<Column></Column>
+		<AList></AList>
+		<TabBar></TabBar>
+	</div>
 </template>
 
 <script>
-import Header from '@/components/Header';
-export default {
-    name:'Article',
-    components:{
-        Header
-
-    }
-}
+	import Header from '@/components/Header';
+	import TabBar from '@/components/TabBar';
+	import Column from '@/components/Column';
+	import AList from '@/components/AList';
+	export default {
+		name: 'Home',
+		components: {
+			Header,
+			TabBar,
+			Column,
+			AList
+		},
+		
+	}
 </script>
 
 <style scoped>
+	#main {
+		display: block;
+	}
 
+	.time {
+		font-size: 12px;
+		color: #999;
+	}
+
+	.button {
+		padding: 0;
+		float: right;
+	}
+
+	.image {
+		width: 100%;
+		height: 200px;
+		display: block;
+	}
+
+	.clearfix:before,
+	.clearfix:after {
+		display: table;
+		content: "";
+	}
+
+	/* #main .el-col-11:nth-child(2n) {
+		margin-left: 8.33333%;
+	} */
+
+	.articleMain{
+		overflow: scroll;
+	}
 </style>
