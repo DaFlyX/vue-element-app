@@ -1,5 +1,6 @@
 <template>
 	<div id="content">
+<<<<<<< HEAD
 		<ul v-bind:data="data">
 			<li v-on:click="selectColumn(0)">
 				<p>全部</p>
@@ -14,6 +15,22 @@
 				<p>推荐工具</p>
 			</li>
 			<li v-on:click="selectColumn(4)">
+=======
+		<ul>
+			<li v-on:click="selectColumn('/article/all',0)">
+				<p>全部</p>
+			</li>
+			<li v-on:click="selectColumn('/article/python',1)">
+				<p>Python</p>
+			</li>
+			<li v-on:click="selectColumn('/article/golang',2)">
+				<p>Golang</p>
+			</li>
+			<li v-on:click="selectColumn('/article/tjgj',3)">
+				<p>推荐工具</p>
+			</li>
+			<li v-on:click="selectColumn('/article/qt',4)">
+>>>>>>> 文章页面样式完成
 				<p>其他</p>
 			</li>
 		</ul>
@@ -25,11 +42,28 @@
 		name:'Column',
 		data(){
 			return{
+<<<<<<< HEAD
 				data:[],
 			}
 		},
 		methods:{
 			
+=======
+				cid: 0
+			}
+		},
+		methods:{
+			selectColumn(topath,cid){
+				this.cid = cid;
+				this.$parent.$refs.AlistCom.getCid(cid)
+				// this.$router.push({
+				// 	path:topath,
+				// 	query:{
+				// 		cid:cid
+				// 	}
+				// })
+			}
+>>>>>>> 文章页面样式完成
 		}
 	}
 </script>

@@ -1,8 +1,13 @@
 <template>
 	<div id="main">
 		<Header title="文章"></Header>
+<<<<<<< HEAD
 		<Column></Column>
 		<AList></AList>
+=======
+		<Column ref="aaa"></Column>
+		<AList ref="AlistCom"></AList>
+>>>>>>> 文章页面样式完成
 		<TabBar></TabBar>
 	</div>
 </template>
